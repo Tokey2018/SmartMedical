@@ -1,0 +1,212 @@
+<!--# layout("/common/layout.html",{"jsBase":"/js/cms/ihUsers/"}){ -->
+
+<form class="layui-form layui-form-pane" id="addForm">
+    <div class="layui-row">
+        <div class="layui-form-item">
+            <div class="layui-inline">
+            <label class="layui-form-label">昵称</label>
+				<div class="layui-input-inline">
+					<input type="text" name="nick" class="layui-input" >
+				</div>
+            </div>
+            <div class="layui-inline">
+            <label class="layui-form-label">姓名</label>
+				<div class="layui-input-inline">
+					<input type="text" name="realname" class="layui-input" >
+				</div>
+            </div>
+        </div>
+    </div>
+    <div class="layui-row">
+        <div class="layui-form-item">
+            <div class="layui-inline">
+            <label class="layui-form-label">头像</label>
+				<div class="layui-input-inline">
+					<input type="text" name="userimg" class="layui-input" >
+				</div>
+            </div>
+            <div class="layui-inline">
+            <label class="layui-form-label">个人资料背景图</label>
+				<div class="layui-input-inline">
+					<input type="text" name="backgroupimg" class="layui-input" >
+				</div>
+            </div>
+        </div>
+    </div>
+    <div class="layui-row">
+        <div class="layui-form-item">
+            <div class="layui-inline">
+            <label class="layui-form-label">password</label>
+				<div class="layui-input-inline">
+					<input type="text" name="password" class="layui-input" >
+				</div>
+            </div>
+            <div class="layui-inline">
+            <label class="layui-form-label">phone</label>
+				<div class="layui-input-inline">
+					<input type="text" name="phone" class="layui-input" lay-verify="phone">
+				</div>
+            </div>
+        </div>
+    </div>
+    <div class="layui-row">
+        <div class="layui-form-item">
+            <div class="layui-inline">
+            <label class="layui-form-label">salt</label>
+				<div class="layui-input-inline">
+					<input type="text" name="salt" class="layui-input" >
+				</div>
+            </div>
+            <div class="layui-inline">
+            <label class="layui-form-label">email</label>
+				<div class="layui-input-inline">
+					<input type="text" name="email" class="layui-input" >
+				</div>
+            </div>
+        </div>
+    </div>
+    <div class="layui-row">
+        <div class="layui-form-item">
+            <div class="layui-inline">
+            <label class="layui-form-label">birthday</label>
+				<div class="layui-input-inline">
+					<input type="text" name="birthday" class="layui-input" >
+				</div>
+            </div>
+            <div class="layui-inline">
+            <label class="layui-form-label">性别</label>
+				<div class="layui-input-inline">
+					<input type="text" name="sex" class="layui-input" >
+				</div>
+            </div>
+        </div>
+    </div>
+    <div class="layui-row">
+        <div class="layui-form-item">
+            <div class="layui-inline">
+            <label class="layui-form-label">是否结婚</label>
+				<div class="layui-input-inline">
+					<input type="text" name="ismarry" class="layui-input" >
+				</div>
+            </div>
+            <div class="layui-inline">
+            <label class="layui-form-label">网易云信Id</label>
+				<div class="layui-input-inline">
+					<input type="text" name="accid" class="layui-input" >
+				</div>
+            </div>
+        </div>
+    </div>
+    <div class="layui-row">
+        <div class="layui-form-item">
+            <div class="layui-inline">
+            <label class="layui-form-label">微信账号</label>
+				<div class="layui-input-inline">
+					<input type="text" name="wechat" class="layui-input" >
+				</div>
+            </div>
+            <div class="layui-inline">
+            <label class="layui-form-label">所属单位Id(医院)</label>
+				<div class="layui-input-inline">
+					<input type="text" name="aid" class="layui-input" >
+				</div>
+            </div>
+        </div>
+    </div>
+    <div class="layui-row">
+        <div class="layui-form-item">
+            <div class="layui-inline">
+            <label class="layui-form-label">所属部门Id(科室)</label>
+				<div class="layui-input-inline">
+					<input type="text" name="did" class="layui-input" >
+				</div>
+            </div>
+            <div class="layui-inline">
+            <label class="layui-form-label">职称1:主任医师</label>
+				<div class="layui-input-inline">
+					<input type="text" name="office" class="layui-input" >
+				</div>
+            </div>
+        </div>
+    </div>
+    <div class="layui-row">
+        <div class="layui-form-item">
+            <div class="layui-inline">
+            <label class="layui-form-label">擅长疾病</label>
+				<div class="layui-input-inline">
+					<input type="text" name="sickskill" class="layui-input" >
+				</div>
+            </div>
+            <div class="layui-inline">
+            <label class="layui-form-label">详细介绍</label>
+				<div class="layui-input-inline">
+					<input type="text" name="intro" class="layui-input" >
+				</div>
+            </div>
+        </div>
+    </div>
+    <div class="layui-row">
+        <div class="layui-form-item">
+            <div class="layui-inline">
+            <label class="layui-form-label">网易云信ID的密码</label>
+				<div class="layui-input-inline">
+					<input type="text" name="token" class="layui-input" >
+				</div>
+            </div>
+            <div class="layui-inline">
+            <label class="layui-form-label">启用状态</label>
+				<div class="layui-input-inline">
+					<input type="text" name="openstatus" class="layui-input" >
+				</div>
+            </div>
+        </div>
+    </div>
+    <div class="layui-row">
+        <div class="layui-form-item">
+            <div class="layui-inline">
+            <label class="layui-form-label">认证审核状态:0未审核，1审核中，5审核通过，-1审核未通过</label>
+				<div class="layui-input-inline">
+					<input type="text" name="auditstatus" class="layui-input" >
+				</div>
+            </div>
+            <div class="layui-inline">
+            <label class="layui-form-label">lasttime</label>
+				<div class="layui-input-inline">
+					<input type="text" name="lasttime" class="layui-input" >
+				</div>
+            </div>
+        </div>
+    </div>
+    <div class="layui-row">
+        <div class="layui-form-item">
+            <div class="layui-inline">
+            <label class="layui-form-label">addtime</label>
+				<div class="layui-input-inline">
+					<input type="text" name="addtime" class="layui-input" >
+				</div>
+            </div>
+            <div class="layui-inline">
+            <label class="layui-form-label">updatetime</label>
+				<div class="layui-input-inline">
+					<input type="text" name="updatetime" class="layui-input" >
+				</div>
+            </div>
+        </div>
+    </div>
+    <div class="layui-row">
+        <div class="layui-form-item">
+        </div>
+    </div>
+    <div class="layui-row">
+        <!-- 业务对象得有一个字段保存附件id，假设是attachmentId  -->
+        <layui:attachment name="attachmentId" batchFileUUID="${uuid()}"  bizType="entity.name" isNew="true"  />
+    </div>
+    <layui:submitButtons id="addButton" />
+</form>
+<!--#} -->
+<script>
+layui.use(['add'], function(){
+    var ihUsersAdd = layui.add
+    ihUsersAdd.init();
+});
+</script>
