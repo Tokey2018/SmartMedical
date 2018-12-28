@@ -1,3 +1,4 @@
+/*
 package com.tokeys.juju;
 
 import org.springframework.boot.SpringApplication;
@@ -19,3 +20,4 @@ public class Application extends SpringBootServletInitializer implements WebAppl
 		SpringApplication.run(Application.class, args);
 	}
 }
+*/

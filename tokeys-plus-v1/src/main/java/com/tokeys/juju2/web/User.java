@@ -1,4 +1,4 @@
-package com.tokeys.juju.web;
+package com.tokeys.juju2.web;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -13,7 +13,7 @@ import java.util.concurrent.ConcurrentHashMap;
  */
 @RestController
 @RequestMapping("/user")
-public class user {
+public class User {
     @GetMapping("/reg88/{id}")
     public  String reg (@PathVariable long id){
         return "11111";

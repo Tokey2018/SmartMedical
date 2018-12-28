@@ -2,7 +2,7 @@ package com.tokeys.im.util;
 
 /**
  * Created by Administrator on 2018/12/13.
- * HttpClientUtil 该类要不要做成单例 ?
+ * HttpClientUtil 该类要不要做成单例 。必须做成单利
  * http 连接池
  * 线程池执行?
  * 当使用了请求连接池管理器（比如PoolingClientConnectionManager）后，HttpClient就可以同时执行多个线程的请求了。
