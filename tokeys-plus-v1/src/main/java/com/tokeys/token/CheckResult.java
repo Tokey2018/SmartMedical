@@ -3,9 +3,7 @@ package com.tokeys.token;
 import io.jsonwebtoken.Claims;
 
 /**
- * 验证结果模型
- * @author XY
- *
+ * JWT 楠岃瘉缁撴灉杩斿洖妯″瀷
  */
 public class CheckResult {
 

@@ -1,15 +1,14 @@
 package com.tokeys.token;
 
-        import com.sun.org.apache.xerces.internal.impl.dv.util.Base64;
-        import io.jsonwebtoken.*;
-        import org.apache.commons.collections.map.HashedMap;
-        import org.springframework.jdbc.datasource.lookup.MapDataSourceLookup;
+import com.sun.org.apache.xerces.internal.impl.dv.util.Base64;
+import io.jsonwebtoken.*;
+import org.apache.commons.collections.map.HashedMap;
 
-        import javax.crypto.SecretKey;
-        import javax.crypto.spec.SecretKeySpec;
-        import java.util.Date;
-        import java.util.HashMap;
-        import java.util.Map;
+import javax.crypto.SecretKey;
+import javax.crypto.spec.SecretKeySpec;
+import java.util.Date;
+import java.util.HashMap;
+import java.util.Map;
 
 public enum TokenManage {
     MANAGE
@@ -156,14 +155,18 @@ public enum TokenManage {
         } catch (ExpiredJwtException e) {
             //Token过期
             map.put(JWTConstant.JWT_ERRCODE_CODE.getVlaue(), JWTConstant.JWT_ERRCODE_EXPIRE.getLg());
+            map.put(JWTConstant.JWT_ERRCODE_MSG.getVlaue(),"Token Expired ");
         } catch (SignatureException e) {
             //验证不通过
             map.put(JWTConstant.JWT_ERRCODE_CODE.getVlaue(), JWTConstant.JWT_ERRCODE_FAIL.getLg());
+            map.put(JWTConstant.JWT_ERRCODE_MSG.getVlaue(),"Token  Verification failed");
         } catch (MalformedJwtException e) {
             //数据格式不对
             map.put(JWTConstant.JWT_ERRCODE_CODE.getVlaue(), JWTConstant.JWT_ERRCODE_DATA.getLg());
+            map.put(JWTConstant.JWT_ERRCODE_MSG.getVlaue(),"Token Date erro");
         } catch (IllegalArgumentException e) {
             map.put(JWTConstant.JWT_ERRCODE_CODE.getVlaue(), JWTConstant.JWT_ERRCODE_FAIL.getLg());
+            map.put(JWTConstant.JWT_ERRCODE_MSG.getVlaue(),"Token Verification failed");
         }
         return map;
     }

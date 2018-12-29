@@ -17,6 +17,7 @@ public enum JWTConstant {
     JWT_ERRCODE_FAIL(4002),
     //jwt 数据不对
     JWT_ERRCODE_DATA(4003),
+    JWT_ERRCODE_MSG("msg"),
     ;
     public String vlaue;
     public long lg;

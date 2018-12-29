@@ -12,15 +12,15 @@ import java.util.concurrent.ConcurrentHashMap;
  * Created by Administrator on 2018/11/08.
  */
 @RestController
-@RequestMapping("/user")
+@RequestMapping("/api")
 public class User {
     @GetMapping("/reg88/{id}")
     public  String reg (@PathVariable long id){
         return "11111";
     }
-     @GetMapping("/login99")
+     @GetMapping("/login")
     public  String login (long id){
-        return "@@@@登录成功!!";
+        return "@@@@登录成功,拦截!!";
     }
    @GetMapping("/send2")
     public  Object send (String  code){
