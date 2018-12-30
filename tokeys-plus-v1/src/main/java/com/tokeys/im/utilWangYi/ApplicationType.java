@@ -1,4 +1,4 @@
-package com.tokeys.im.utilWangY;
+package com.tokeys.im.utilWangYi;
 
 /**
  * @author Firrela

@@ -1,7 +1,5 @@
 package com.tokeys.im.enums;
 
-import org.aspectj.weaver.patterns.ThisOrTargetAnnotationPointcut;
-
 /**
  * 网易云信 API
  * Created by Administrator on 2018/11/27.

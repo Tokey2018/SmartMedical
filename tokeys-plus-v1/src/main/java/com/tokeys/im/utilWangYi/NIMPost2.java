@@ -1,4 +1,4 @@
-package com.tokeys.im.utilWangY;
+package com.tokeys.im.utilWangYi;
 
 import org.apache.http.HttpEntity;
 import org.apache.http.client.methods.HttpPost;
