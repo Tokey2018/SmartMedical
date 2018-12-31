@@ -31,11 +31,12 @@ public enum HttpClientUtil {
      * @return
      */
     public String postForm(Map formMap, String url) {
+        CheckSumBuilder checkSumBuilder = new CheckSumBuilder();
         return HttpRequest.post(url)
                 .header("AppKey", YunXinAPPKey.YUNXIN_APPKEY.getValue())//头信息，多个头信息多次调用此方法即可
-                .header("Nonce", CheckSumBuilder.BUILDER.getNonce())
-                .header("CurTime", CheckSumBuilder.BUILDER.getCurTime())
-                .header("CheckSum", CheckSumBuilder.BUILDER.getCheckSum())
+                .header("Nonce", checkSumBuilder.getNonce())
+                .header("CurTime", checkSumBuilder.getCurTime())
+                .header("CheckSum", checkSumBuilder.getCheckSum())
                 .header("Content-Type", FORM_CONTENT_TYPE)
                 .form(formMap)//表单内容
                 .timeout(20000)//超时，毫秒
@@ -51,11 +52,12 @@ public enum HttpClientUtil {
      * @return
      */
     public String postJson(JSON json, String url) {
+        CheckSumBuilder checkSumBuilder = new CheckSumBuilder();
         return HttpRequest.post(url)
                 .header("AppKey", YunXinAPPKey.YUNXIN_APPKEY.getValue())//头信息，多个头信息多次调用此方法即可
-                .header("Nonce", CheckSumBuilder.BUILDER.getNonce())
-                .header("CurTime", CheckSumBuilder.BUILDER.getCurTime())
-                .header("CheckSum", CheckSumBuilder.BUILDER.getCheckSum())
+                .header("Nonce", checkSumBuilder.getNonce())
+                .header("CurTime", checkSumBuilder.getCurTime())
+                .header("CheckSum", checkSumBuilder.getCheckSum())
                 .header("Content-Type", JSON_CONTENT_TYPE)
                 .body(json)//json 对象
                 .timeout(20000)//超时，毫秒
@@ -64,11 +66,12 @@ public enum HttpClientUtil {
     }
 
     public String getForm(Map formMap, String url) {
+        CheckSumBuilder checkSumBuilder = new CheckSumBuilder();
         return HttpRequest.get(url)
                 .header("AppKey", YunXinAPPKey.YUNXIN_APPKEY.getValue())//头信息，多个头信息多次调用此方法即可
-                .header("Nonce", CheckSumBuilder.BUILDER.getNonce())
-                .header("CurTime", CheckSumBuilder.BUILDER.getCurTime())
-                .header("CheckSum", CheckSumBuilder.BUILDER.getCheckSum())
+                .header("Nonce", checkSumBuilder.getNonce())
+                .header("CurTime", checkSumBuilder.getCurTime())
+                .header("CheckSum", checkSumBuilder.getCheckSum())
                 .header("Content-Type", FORM_CONTENT_TYPE)
                 .form(formMap)//json 对象
                 .timeout(20000)//超时，毫秒
@@ -77,11 +80,12 @@ public enum HttpClientUtil {
     }
 
     public String getForm(String strValue, String url) {
+        CheckSumBuilder checkSumBuilder = new CheckSumBuilder();
         return HttpRequest.get(url)
                 .header("AppKey", YunXinAPPKey.YUNXIN_APPKEY.getValue())//头信息，多个头信息多次调用此方法即可
-                .header("Nonce", CheckSumBuilder.BUILDER.getNonce())
-                .header("CurTime", CheckSumBuilder.BUILDER.getCurTime())
-                .header("CheckSum", CheckSumBuilder.BUILDER.getCheckSum())
+                .header("Nonce", checkSumBuilder.getNonce())
+                .header("CurTime", checkSumBuilder.getCurTime())
+                .header("CheckSum", checkSumBuilder.getCheckSum())
                 .header("Content-Type", FORM_CONTENT_TYPE)
                 .form(strValue)//json 对象
                 .timeout(20000)//超时，毫秒
@@ -90,11 +94,12 @@ public enum HttpClientUtil {
     }
 
     public String getJson(JSON json, String url) {
+        CheckSumBuilder checkSumBuilder = new CheckSumBuilder();
         return HttpRequest.get(url)
                 .header("AppKey", YunXinAPPKey.YUNXIN_APPKEY.getValue())//头信息，多个头信息多次调用此方法即可
-                .header("Nonce", CheckSumBuilder.BUILDER.getNonce())
-                .header("CurTime", CheckSumBuilder.BUILDER.getCurTime())
-                .header("CheckSum", CheckSumBuilder.BUILDER.getCheckSum())
+                .header("Nonce", checkSumBuilder.getNonce())
+                .header("CurTime", checkSumBuilder.getCurTime())
+                .header("CheckSum", checkSumBuilder.getCheckSum())
                 .header("Content-Type", JSON_CONTENT_TYPE)
                 .body(json)//json 对象
                 .timeout(20000)//超时，毫秒
@@ -103,11 +108,12 @@ public enum HttpClientUtil {
     }
 
     public String putJson(JSON json, String url) {
+        CheckSumBuilder checkSumBuilder = new CheckSumBuilder();
         return HttpRequest.put(url)
                 .header("AppKey", YunXinAPPKey.YUNXIN_APPKEY.getValue())//头信息，多个头信息多次调用此方法即可
-                .header("Nonce", CheckSumBuilder.BUILDER.getNonce())
-                .header("CurTime", CheckSumBuilder.BUILDER.getCurTime())
-                .header("CheckSum", CheckSumBuilder.BUILDER.getCheckSum())
+                .header("Nonce", checkSumBuilder.getNonce())
+                .header("CurTime", checkSumBuilder.getCurTime())
+                .header("CheckSum", checkSumBuilder.getCheckSum())
                 .header("Content-Type", JSON_CONTENT_TYPE)
                 .body(json)//json 对象
                 .timeout(20000)//超时，毫秒
@@ -115,11 +121,12 @@ public enum HttpClientUtil {
     }
 
     public String deletJson(JSON json, String url) {
+        CheckSumBuilder checkSumBuilder = new CheckSumBuilder();
         return HttpRequest.delete(url)
                 .header("AppKey", YunXinAPPKey.YUNXIN_APPKEY.getValue())//头信息，多个头信息多次调用此方法即可
-                .header("Nonce", CheckSumBuilder.BUILDER.getNonce())
-                .header("CurTime", CheckSumBuilder.BUILDER.getCurTime())
-                .header("CheckSum", CheckSumBuilder.BUILDER.getCheckSum())
+                .header("Nonce", checkSumBuilder.getNonce())
+                .header("CurTime", checkSumBuilder.getCurTime())
+                .header("CheckSum", checkSumBuilder.getCheckSum())
                 .header("Content-Type", JSON_CONTENT_TYPE)
                 .body(json)//json 对象
                 .timeout(20000)//超时，毫秒

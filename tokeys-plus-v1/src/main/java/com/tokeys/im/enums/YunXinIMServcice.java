@@ -5,6 +5,8 @@ package com.tokeys.im.enums;
  * Created by Administrator on 2018/11/27.
  */
 public enum YunXinIMServcice {
+     /* 发送短信*/
+      SEND_SMS("发送验证短信","https://api.netease.im/sms/sendcode.action"),
 
     /*用户*/
     USER_CREATE("POST创建网易云信唯一id","https://api.netease.im/nimserver/user/create.action"),
