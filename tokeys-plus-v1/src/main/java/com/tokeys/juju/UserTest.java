@@ -1,5 +1,11 @@
 package com.tokeys.juju;
 
+import com.tokeys.im.util.CacheUtil;
+import com.tokeys.im.web.api.SendSMS;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.Cache;
+import org.springframework.cache.ehcache.EhCacheCacheManager;
+import org.springframework.stereotype.Component;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -12,8 +18,14 @@ import java.util.concurrent.ConcurrentHashMap;
  * Created by Administrator on 2018/11/08.
  */
 @RestController
+
 @RequestMapping("/api")
 public class UserTest {
+   @Autowired
+   CacheUtil cacheUtil;
+    @Autowired
+    SendSMS sendSMS;
+
     @GetMapping("/reg88/{id}")
     public  String reg (@PathVariable long id){
         return "11111";
@@ -28,6 +40,26 @@ public class UserTest {
        map.put("手机号",000000);
        map.put("验证码",8888);
         return  map;
+    }
+
+    /**
+     *  EhCacheCacheManager 缓存测试
+     * @return
+     */
+    @GetMapping("/getCache")
+    public  String  put() {
+        // cacheUtil.getCache("code").put("13330352893", "缓存对象是:123456");
+
+        Cache cache = cacheUtil.getCache("code");
+        // System.out.println("没有删除前的缓存==" + cache.get("13330352893").get().toString());
+        //  cache.clear();
+        return cache.get("13330352893").get().toString();
+    }
+
+    @GetMapping("/sendSmsCode")
+    public  boolean sendSmsCode(String phone){
+
+        return sendSMS.sendSmsCode(phone);
     }
 
 }
