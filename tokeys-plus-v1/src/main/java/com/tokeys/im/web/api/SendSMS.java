@@ -49,4 +49,16 @@ public class SendSMS {
         }
         return false;
     }
+
+    public  boolean checkSmsCode(String phone,String code ) {
+        try {
+            String smscode = cacheUtil.getCache("code").get(phone).get().toString();
+            if (null != smscode && smscode.equals(code)) {
+                return true;
+            }
+        } catch (Exception e) {
+            return false;
+        }
+        return false;
+    }
 }

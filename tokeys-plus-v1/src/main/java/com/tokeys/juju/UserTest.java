@@ -21,45 +21,54 @@ import java.util.concurrent.ConcurrentHashMap;
 
 @RequestMapping("/api")
 public class UserTest {
-   @Autowired
-   CacheUtil cacheUtil;
+    @Autowired
+    CacheUtil cacheUtil;
     @Autowired
     SendSMS sendSMS;
 
     @GetMapping("/reg88/{id}")
-    public  String reg (@PathVariable long id){
+    public String reg(@PathVariable long id) {
         return "11111";
     }
-     @GetMapping("/login")
-    public  String login (long id){
+
+    @GetMapping("/login")
+    public String login(long id) {
         return "@@@@登录成功,拦截!!";
     }
-   @GetMapping("/send2")
-    public  Object send (String  code){
-       Map<String, Object> map= new ConcurrentHashMap<>();
-       map.put("手机号",000000);
-       map.put("验证码",8888);
-        return  map;
+
+    @GetMapping("/send2")
+    public Object send(String code) {
+        Map<String, Object> map = new ConcurrentHashMap<>();
+        map.put("手机号", 000000);
+        map.put("验证码", 8888);
+        return map;
     }
 
     /**
-     *  EhCacheCacheManager 缓存测试
+     * EhCacheCacheManager 缓存测试
+     *
      * @return
      */
     @GetMapping("/getCache")
-    public  String  put() {
-        // cacheUtil.getCache("code").put("13330352893", "缓存对象是:123456");
+    public String put() {
+        // cacheUtil.getCache("code").put("133***********93", "缓存对象是:123456");
 
         Cache cache = cacheUtil.getCache("code");
         // System.out.println("没有删除前的缓存==" + cache.get("13330352893").get().toString());
         //  cache.clear();
-        return cache.get("13330352893").get().toString();
+        return cache.get("133***********93").get().toString();
     }
 
     @GetMapping("/sendSmsCode")
-    public  boolean sendSmsCode(String phone){
+    public boolean sendSmsCode(String phone) {
 
         return sendSMS.sendSmsCode(phone);
     }
 
+
+    @GetMapping("/checkSmsCode")
+    public boolean checkSmsCode(String phone,String code) {
+
+        return sendSMS.checkSmsCode(phone,code);
+    }
 }
