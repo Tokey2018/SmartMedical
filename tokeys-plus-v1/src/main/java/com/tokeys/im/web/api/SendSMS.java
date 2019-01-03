@@ -1,20 +1,15 @@
 package com.tokeys.im.web.api;
 
-import cn.hutool.json.JSON;
-import cn.hutool.json.JSONException;
 import cn.hutool.json.JSONObject;
 import cn.hutool.json.JSONUtil;
 import com.tokeys.im.enums.YunXinIMServcice;
 import com.tokeys.im.util.CacheUtil;
 import com.tokeys.im.util.HttpClientUtil;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.cache.ehcache.EhCacheCacheManager;
 import org.springframework.stereotype.Component;
 
-import java.io.Writer;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.Objects;
 
 /**
  * 发送验证短信

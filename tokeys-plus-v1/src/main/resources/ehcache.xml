@@ -109,6 +109,206 @@
 
     </cache>
 
+    <cache name="cache:core:menuTree"
+           maxEntriesLocalHeap="90000"
+           eternal="false"
+           timeToIdleSeconds="900"
+           timeToLiveSeconds="900"
+           overflowToDisk="true"
+           diskPersistent="true" >
+        <bootstrapCacheLoaderFactory
+                class="net.sf.ehcache.store.DiskStoreBootstrapCacheLoaderFactory"
+                properties="bootstrapAsynchronously=true" />
+    </cache>
+
+
+    <cache name="cache:core:orgTree"
+           maxEntriesLocalHeap="90000"
+           eternal="false"
+           timeToIdleSeconds="900"
+           timeToLiveSeconds="900"
+           overflowToDisk="true"
+           diskPersistent="true" >
+        <bootstrapCacheLoaderFactory
+                class="net.sf.ehcache.store.DiskStoreBootstrapCacheLoaderFactory"
+                properties="bootstrapAsynchronously=true" />
+    </cache>
+
+
+    <cache name="cache:core:functionTree"
+           maxEntriesLocalHeap="90000"
+           eternal="false"
+           timeToIdleSeconds="900"
+           timeToLiveSeconds="900"
+           overflowToDisk="true"
+           diskPersistent="true" >
+        <bootstrapCacheLoaderFactory
+                class="net.sf.ehcache.store.DiskStoreBootstrapCacheLoaderFactory"
+                properties="bootstrapAsynchronously=true" />
+    </cache>
+
+
+
+    <cache name="cache:core:dictType"
+           maxEntriesLocalHeap="90000"
+           eternal="false"
+           timeToIdleSeconds="900"
+           timeToLiveSeconds="900"
+           overflowToDisk="true"
+           diskPersistent="true" >
+        <bootstrapCacheLoaderFactory
+                class="net.sf.ehcache.store.DiskStoreBootstrapCacheLoaderFactory"
+                properties="bootstrapAsynchronously=true" />
+    </cache>
+
+    <cache name="cache:core:dictValue"
+           maxEntriesLocalHeap="90000"
+           eternal="false"
+           timeToIdleSeconds="900"
+           timeToLiveSeconds="900"
+           overflowToDisk="true"
+           diskPersistent="true" >
+        <bootstrapCacheLoaderFactory
+                class="net.sf.ehcache.store.DiskStoreBootstrapCacheLoaderFactory"
+                properties="bootstrapAsynchronously=true" />
+    </cache>
+
+  <cache name="cache:core:ditcSameLevel"
+           maxEntriesLocalHeap="90000"
+           eternal="false"
+           timeToIdleSeconds="900"
+           timeToLiveSeconds="900"
+           overflowToDisk="true"
+           diskPersistent="true" >
+        <bootstrapCacheLoaderFactory
+                class="net.sf.ehcache.store.DiskStoreBootstrapCacheLoaderFactory"
+                properties="bootstrapAsynchronously=true" />
+    </cache>
+
+  <cache name="cache:core:dictChildren"
+           maxEntriesLocalHeap="90000"
+           eternal="false"
+           timeToIdleSeconds="900"
+           timeToLiveSeconds="900"
+           overflowToDisk="true"
+           diskPersistent="true" >
+        <bootstrapCacheLoaderFactory
+                class="net.sf.ehcache.store.DiskStoreBootstrapCacheLoaderFactory"
+                properties="bootstrapAsynchronously=true" />
+    </cache>
+
+  <cache name="cache:core:userFunctionAccess"
+           maxEntriesLocalHeap="90000"
+           eternal="false"
+           timeToIdleSeconds="900"
+           timeToLiveSeconds="900"
+           overflowToDisk="true"
+           diskPersistent="true" >
+        <bootstrapCacheLoaderFactory
+                class="net.sf.ehcache.store.DiskStoreBootstrapCacheLoaderFactory"
+                properties="bootstrapAsynchronously=true" />
+    </cache>
+
+  <cache name="ccache:core:functionChildren"
+           maxEntriesLocalHeap="90000"
+           eternal="false"
+           timeToIdleSeconds="900"
+           timeToLiveSeconds="900"
+           overflowToDisk="true"
+           diskPersistent="true" >
+        <bootstrapCacheLoaderFactory
+                class="net.sf.ehcache.store.DiskStoreBootstrapCacheLoaderFactory"
+                properties="bootstrapAsynchronously=true" />
+    </cache>
+
+  <cache name="cache:core:function"
+           maxEntriesLocalHeap="90000"
+           eternal="false"
+           timeToIdleSeconds="900"
+           timeToLiveSeconds="900"
+           overflowToDisk="true"
+           diskPersistent="true" >
+        <bootstrapCacheLoaderFactory
+                class="net.sf.ehcache.store.DiskStoreBootstrapCacheLoaderFactory"
+                properties="bootstrapAsynchronously=true" />
+    </cache>
+
+
+  <cache name="cache:core:userDataAccess"
+           maxEntriesLocalHeap="90000"
+           eternal="false"
+           timeToIdleSeconds="900"
+           timeToLiveSeconds="900"
+           overflowToDisk="true"
+           diskPersistent="true" >
+        <bootstrapCacheLoaderFactory
+                class="net.sf.ehcache.store.DiskStoreBootstrapCacheLoaderFactory"
+                properties="bootstrapAsynchronously=true" />
+    </cache>
+
+
+  <cache name="cache:core:userMenu"
+           maxEntriesLocalHeap="90000"
+           eternal="false"
+           timeToIdleSeconds="900"
+           timeToLiveSeconds="900"
+           overflowToDisk="true"
+           diskPersistent="true" >
+        <bootstrapCacheLoaderFactory
+                class="net.sf.ehcache.store.DiskStoreBootstrapCacheLoaderFactory"
+                properties="bootstrapAsynchronously=true" />
+    </cache>
+
+  <cache name="core:user"
+           maxEntriesLocalHeap="90000"
+           eternal="false"
+           timeToIdleSeconds="900"
+           timeToLiveSeconds="900"
+           overflowToDisk="true"
+           diskPersistent="true" >
+        <bootstrapCacheLoaderFactory
+                class="net.sf.ehcache.store.DiskStoreBootstrapCacheLoaderFactory"
+                properties="bootstrapAsynchronously=true" />
+    </cache>
+
+  <cache name="core:currentOrg"
+           maxEntriesLocalHeap="90000"
+           eternal="false"
+           timeToIdleSeconds="900"
+           timeToLiveSeconds="900"
+           overflowToDisk="true"
+           diskPersistent="true" >
+        <bootstrapCacheLoaderFactory
+                class="net.sf.ehcache.store.DiskStoreBootstrapCacheLoaderFactory"
+                properties="bootstrapAsynchronously=true" />
+    </cache>
+
+  <cache name="core:orgs"
+           maxEntriesLocalHeap="90000"
+           eternal="false"
+           timeToIdleSeconds="900"
+           timeToLiveSeconds="900"
+           overflowToDisk="true"
+           diskPersistent="true" >
+        <bootstrapCacheLoaderFactory
+                class="net.sf.ehcache.store.DiskStoreBootstrapCacheLoaderFactory"
+                properties="bootstrapAsynchronously=true" />
+    </cache>
+
+
+  <cache name="admin"
+           maxEntriesLocalHeap="90000"
+           eternal="false"
+           timeToIdleSeconds="900"
+           timeToLiveSeconds="900"
+           overflowToDisk="true"
+           diskPersistent="true" >
+        <bootstrapCacheLoaderFactory
+                class="net.sf.ehcache.store.DiskStoreBootstrapCacheLoaderFactory"
+                properties="bootstrapAsynchronously=true" />
+    </cache>
+
+
     <!--
     FIFO（先进先出）或是LFU（较少使用）:  http://blog.csdn.net/xiajun07061225/article/details/40211391
     http://blog.csdn.net/codepython/article/details/43051001
@@ -144,15 +344,6 @@
                 properties="bootstrapAsynchronously=true" />
 
     </cache>
-
-
-
-
-
-
-
-
-
 
 
     <!--  以下是三个 sample cache，仅作配置参考 ============================================  -->
