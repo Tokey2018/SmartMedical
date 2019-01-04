@@ -1,7 +1,7 @@
 package com.tokeys.im.util;
 
 import cn.hutool.core.bean.BeanUtil;
-import com.tokeys.im.enums.YunXinIMServcice;
+import com.tokeys.im.enums.YunXinIMApi;
 import com.tokeys.im.model.IMUser;
 
 import java.util.Map;
@@ -42,7 +42,7 @@ class POSTForm extends Thread {
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-        System.out.println(this.getName() + "返回结果 =" + HttpClientUtil.INSTANCE.postForm(map, YunXinIMServcice.USER_CREATE.getApi()));
+        System.out.println(this.getName() + "返回结果 =" + HttpClientUtil.INSTANCE.postForm(map, YunXinIMApi.USER_CREATE.getApi()));
 
     }
 

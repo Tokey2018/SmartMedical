@@ -1,12 +1,12 @@
-package com.tokeys.im.web.api;
+package com.tokeys.im.servcice;
 
 import cn.hutool.json.JSONObject;
 import cn.hutool.json.JSONUtil;
-import com.tokeys.im.enums.YunXinIMServcice;
+import com.tokeys.im.enums.YunXinIMApi;
 import com.tokeys.im.util.CacheUtil;
 import com.tokeys.im.util.HttpClientUtil;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -16,10 +16,10 @@ import java.util.Map;
  * Created by Administrator on 2019/01/01.
  * 若是有了共享数据，那为了线程安全，我们可以设置singleton=“false”来保证其安全性。
  * https://blog.csdn.net/liangzi4454/article/details/9213657
+ * @Component(value = "singleton=“false”")
  */
-@Component("singleton=“false”")
-//@Component(value = "singleton=“false”")
-public class SendSMS {
+@Service("singleton=“false”")
+public class SendSMSService {
 
     @Autowired
     CacheUtil cacheUtil;
@@ -27,7 +27,7 @@ public class SendSMS {
     public boolean sendSmsCode(String phone) {
         Map<String, Object> map = new HashMap();
         map.put("mobile", phone);
-        String result = HttpClientUtil.INSTANCE.postForm(map, YunXinIMServcice.SEND_SMS.getApi());
+        String result = HttpClientUtil.INSTANCE.postForm(map, YunXinIMApi.SEND_SMS.getApi());
         //返回结果:{"msg":"13683","code":200,"obj":"2864"}
         JSONObject jsonObject = JSONUtil.parseObj(result);
         if (null != jsonObject && null != jsonObject.get("obj")) {

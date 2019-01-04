@@ -4,7 +4,7 @@ package com.tokeys.im.enums;
  * 网易云信 API
  * Created by Administrator on 2018/11/27.
  */
-public enum YunXinIMServcice {
+public enum YunXinIMApi {
      /* 发送短信*/
       SEND_SMS("发送验证短信","https://api.netease.im/sms/sendcode.action"),
 
@@ -49,7 +49,7 @@ public enum YunXinIMServcice {
     private String description;
     private String api;
 
-    YunXinIMServcice(String description, String api) {
+    YunXinIMApi(String description, String api) {
         this.description = description;
         this.api = api;
     }

@@ -1,7 +1,6 @@
 package com.tokeys.juju;
 
 import com.tokeys.im.util.CacheUtil;
-import com.tokeys.im.web.api.SendSMS;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.Cache;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -20,8 +19,6 @@ import java.util.concurrent.ConcurrentHashMap;
 public class UserTest {
    @Autowired
    CacheUtil cacheUtil;
-    @Autowired
-    SendSMS sendSMS;
 
     @GetMapping("/reg88/{id}")
     public String reg(@PathVariable long id) {
@@ -57,16 +54,4 @@ public class UserTest {
         // return "";
     }
 
-    @GetMapping("/sendSmsCode")
-    public boolean sendSmsCode(String phone) {
-
-        return sendSMS.sendSmsCode(phone);
-    }
-
-
-    @GetMapping("/checkSmsCode")
-    public boolean checkSmsCode(String phone,String code) {
-
-        return sendSMS.checkSmsCode(phone,code);
-    }
 }
