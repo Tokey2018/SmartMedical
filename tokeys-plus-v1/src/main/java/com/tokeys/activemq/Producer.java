@@ -38,11 +38,9 @@ public class Producer {
     public ConnectionFactory connectionFactory() {
 
         ActiveMQConnectionFactory connectionFactory = new ActiveMQConnectionFactory();
-        //FIXME 放到配置文件中初始化
-       /* connectionFactory.setBrokerURL("ailover:(tcp://localhost:61616)");
-        connectionFactory.setUserName("admin");
-        connectionFactory.setPassword("admin");
-        */
+        //FIXME 应该放到配置文件中初始化
+
+        //connectionFactory.setBrokerURL("tcp://www.ju*****.com:61616");
         return connectionFactory;
     }
 
