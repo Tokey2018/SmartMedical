@@ -1,4 +1,4 @@
-package com.tokeys.im.api;
+package com.tokeys.im.servcice;
 
 import cn.hutool.core.bean.BeanUtil;
 import cn.hutool.json.JSONObject;
@@ -11,7 +11,7 @@ import com.tokeys.im.util.ResultUtil;
 import java.util.HashMap;
 import java.util.Map;
 
-public class ImUserApi {
+public class ImUserService {
 
 
     /**
