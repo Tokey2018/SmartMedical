@@ -99,6 +99,7 @@ public class FriendService {
             };
             executor.execute( runnable );
         }
+        executor.shutdown();
     }
 
     /**
@@ -119,14 +120,18 @@ public class FriendService {
             try {
                 JSONObject obj = JSONUtil.parseObj( futureTask.get() );
                 if ("500".equals( obj.get( "code" ).toString() )) {
+                    executor.shutdown();
                     return JsonResult.failMessage( obj.toString() );
                 }
             } catch (InterruptedException e) {
+                executor.shutdownNow();
                 return JsonResult.failMessage( e.getMessage() );
             } catch (ExecutionException e) {
+                executor.shutdownNow();
                 return JsonResult.failMessage( e.getMessage() );
             }
         }
+        executor.shutdown();
         return JsonResult.success();
     }
 
@@ -149,15 +154,18 @@ public class FriendService {
                 JSONObject obj = JSONUtil.parseObj( futureTask.get() );
                 if ("500".equals( obj.get( "code" ).toString() )) {
                     j++;
-                    //TODO 
-                    System.out.println( "记录到日志表log  错误数量111j=" + j );
+                    //TODO
+                    System.out.print( "记录到日志表log  错误数量111j=" + j );
                 }
             } catch (InterruptedException e) {
+                executor.shutdownNow();
                 return JsonResult.failMessage( e.getMessage() );
             } catch (ExecutionException e) {
+                executor.shutdownNow();
                 return JsonResult.failMessage( e.getMessage() );
             }
         }
+        executor.shutdown();
         return JsonResult.success();
     }
 
@@ -166,17 +174,13 @@ public class FriendService {
      *
      * @return
      */
-    public JsonResult<JSONObject> batchForkAdd() {
+    public JsonResult<JSONObject> batchForkJoinAdd() {
 
 
         return null;
     }
 
-    public JsonResult<JSONObject> batchForkStrongAdd() {
 
-
-        return null;
-    }
 
 
     // TODO 删除好友
