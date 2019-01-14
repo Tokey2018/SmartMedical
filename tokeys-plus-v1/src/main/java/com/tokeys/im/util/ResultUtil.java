@@ -13,12 +13,12 @@ public enum ResultUtil {
     INSTANCE;
 
     public JsonResult<JSONObject> getResult(String strjson) {
-        JSONObject obj = JSONUtil.parseObj(strjson);
-
-        if ("200" != obj.get("code")) {
-            return JsonResult.failMessage("erro:" + obj.get("desc").toString());
+        JSONObject obj = JSONUtil.parseObj( strjson );
+        //FIXME code  建议转成变量在比较 String code = obj.get( "code" ).toString();
+        if (!"200".equals( obj.get( "code" ).toString() )) {
+            return JsonResult.failMessage( "erro:" + obj.get( "desc" ).toString() );
         } else {
-            return JsonResult.success(JSONUtil.parseObj(strjson));
+            return JsonResult.success( JSONUtil.parseObj( strjson ) );
         }
     }
 
