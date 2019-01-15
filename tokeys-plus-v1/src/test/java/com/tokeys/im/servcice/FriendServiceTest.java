@@ -29,9 +29,9 @@ public class FriendServiceTest {
         friends.add( f1 );
         friends.add( f2 );
         friends.add( f3 );
-        // System.out.println("多 线程执行结果:=="+new FriendService(). batchStrongAdd(friends));
+         System.out.println("多 线程执行结果:=="+new FriendService(). batchStrongAdd(friends));
         // System.out.println("单线程执行结果:=="+new FriendService(). add(f1));
-        System.out.println( "多 线程执行结果:==" + new FriendService().batchStrongLogAdd( friends ) );
+        //System.out.println( "多 线程执行结果:==" + new FriendService().batchStrongLogAdd( friends ) );
 
 
     }

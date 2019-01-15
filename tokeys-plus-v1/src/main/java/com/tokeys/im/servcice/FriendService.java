@@ -103,8 +103,11 @@ public class FriendService {
     }
 
     /**
-     * 采用 :FIXME 线程池    ,http请求也应该使用连接池
-     * 增加返回结果,只要一个添加失败成功,就全部添加失败,必须全部成功,才成功.
+     * 采用 :FIXME 线程池    ,http请求也应该使用连接池。只管添加， 除非异常才返回失败
+     * 为了提升性能 不需要拿到结果  ;  在循环里面调用 futureTask.get() 多线程也会变单线程
+     * https://www.cnblogs.com/wscit/p/5768447.html 基于线程池和连接池的Http请求
+     * shutdown()：不会立即终止线程池，而是要等所有任务缓存队列中的任务都执行完后才终止，但再也不会接受新的任务 https://www.cnblogs.com/dolphin0520/p/3932921.html
+     * 项目体验：高并发httpclient和线程池的正确使用,王大师利用星期天的时间 https://blog.csdn.net/yicong406880638/article/details/50128679
      * executor.execute( new Thread( futureTask ) ) 等价  executor.execute( futureTask ) ;
      *
      * @return
@@ -116,17 +119,9 @@ public class FriendService {
             Friend friend = friends.get( i );
             ResultCode resutlThread = new ResultCode( friend );
             futureTask = new FutureTask<JsonResult>( resutlThread );
-            executor.execute( futureTask );
             try {
-                JSONObject obj = JSONUtil.parseObj( futureTask.get() );
-                if ("500".equals( obj.get( "code" ).toString() )) {
-                    executor.shutdown();
-                    return JsonResult.failMessage( obj.toString() );
-                }
-            } catch (InterruptedException e) {
-                executor.shutdownNow();
-                return JsonResult.failMessage( e.getMessage() );
-            } catch (ExecutionException e) {
+                executor.execute( futureTask );
+            } catch (Exception e) {
                 executor.shutdownNow();
                 return JsonResult.failMessage( e.getMessage() );
             }
@@ -138,6 +133,7 @@ public class FriendService {
 
     /**
      * 增加返回结果: 没有添加成功的用户记录到日志表里面!!!
+     *
      *
      * @return
      */
@@ -151,6 +147,7 @@ public class FriendService {
             futureTask = new FutureTask<JsonResult>( resutlThread );
             executor.execute( futureTask );
             try {
+                //FIXME futureTask.get() 会阻塞线程 多线程也变成单线程
                 JSONObject obj = JSONUtil.parseObj( futureTask.get() );
                 if ("500".equals( obj.get( "code" ).toString() )) {
                     j++;
